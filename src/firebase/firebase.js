@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { auth } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
+// Firebase configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_apiKey,
   authDomain: import.meta.env.VITE_authDomain,
@@ -10,6 +11,22 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_appId,
 };
 
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase app
+const firebaseApp = initializeApp(firebaseConfig);
 
-console.log("app", app);
+// Initialize Firebase Auth provider
+const provider = new GoogleAuthProvider();
+
+// Force user to select an account
+provider.setCustomParameters({
+  prompt: "select_account",
+});
+
+// Initialize Firebase Auth
+const auth = getAuth(firebaseApp);
+
+// Function to sign in with Google using a popup
+export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+
+// Export auth for use in other parts of your application
+export { auth };
