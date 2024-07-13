@@ -9,9 +9,7 @@ const Loader = () => {
       >
         <img src={spinner} alt="spinner" />
       </div>
-      <h2 className="font-thin font-mono text-lg mt-4 text-orange-800 ">
-        Koca Season II
-      </h2>
+      <h2 className="font-thin font-mono text-lg mt-4">Koca Season II</h2>
     </div>
   );
 };

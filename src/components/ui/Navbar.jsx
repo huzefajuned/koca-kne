@@ -1,30 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { auth } from "../../firebase/firebase";
 import { signOut } from "firebase/auth";
 import { navlinks } from "../../utils";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import user_avatar from "../../assets/user_avatar.png";
 import { signin } from "../../firebase/firebase.utils";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
+  const { user, setUser } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [user, setUser] = useState(null);
 
-  const Signin_ = async () => {
-    await signin()
-      .then((user) => {
-        console.log("user after signin", user);
-      })
-      .catch((error) => {
-        console.log("error on signin", error);
-      });
-  };
-
-  // // authentication state observer and get user data
+  /**
+   * authentication state observer and get user data
+   */
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        setUser(user.providerData[0]);
+        setUser(user?.providerData[0]);
       } else {
         setUser(null);
         // setLoading(false);
@@ -35,28 +29,10 @@ const Navbar = () => {
     return () => unsubscribe();
   }, []);
 
-  // Validating user authentication...
-  // show hide profle & login  based on user authentication state...
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setIsAuthenticated(true);
-  //     } else {
-  //       setIsAuthenticated(false);
-  //     }
-  //   });
-  //   return () => unsubscribe();
-  // }, []);
-
-  // user signout function...
-  const handleSignOut = () => {
-    signOut(auth);
-  };
-
   return (
-    <nav className="bg-[#E2BBE9] p-4">
+    <nav className=" text-black bg-transparent p-4 sticky  top-0">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold text-xl cursor-pointer  flex flex-col items-center justify-center">
+        <div className=" font-bold text-xl cursor-pointer  flex flex-col items-center justify-center">
           <Link to="/">
             <img src={logo} alt="logo" className="w-16" />
             <span className="text-sm underline bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-orange-500">
@@ -67,23 +43,19 @@ const Navbar = () => {
         {/* Navlinks */}
         <div className="hidden md:flex space-x-4">
           {navlinks.map((link) => (
-            <Link
-              key={link.id}
-              to={link.path}
-              className="text-white hover:text-gray-400"
-            >
+            <Link key={link.id} to={link.path} className=" hover:text-gray-400">
               {link.title}
             </Link>
           ))}
         </div>
         {/* Show hide Login. based on user Authentication */}
-        <div className="text-white sm:hidden md:block">
+        <div className=" sm:hidden md:block">
           {user ? (
             <div className="flex items-center space-x-4">
               <Link to="/profile">
                 {/* <span>Profile</sp an> */}
                 <img
-                  src={user.photoURL}
+                  src={user.photoURL || user_avatar}
                   alt="user photoURL"
                   className="rounded-full  h-16 w-16 border-2"
                 />
@@ -91,8 +63,8 @@ const Navbar = () => {
             </div>
           ) : (
             <button
-              onClick={() => Signin_()}
-              className="text-white border-white border-2 p-2
+              onClick={() => signin()}
+              className=" border-white border-2 p-2
              rounded-lg hover:text-gray-400"
             >
               Logins
@@ -100,10 +72,7 @@ const Navbar = () => {
           )}
         </div>
         <div className="md:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white"
-          >
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="">
             <svg
               className="w-6 h-6"
               fill="none"
@@ -128,7 +97,7 @@ const Navbar = () => {
               <Link
                 key={link.id}
                 to={link.path}
-                className="text-white hover:text-gray-400"
+                className=" hover:text-gray-400"
               >
                 {link.title}
               </Link>

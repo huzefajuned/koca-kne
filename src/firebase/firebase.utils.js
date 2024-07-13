@@ -1,4 +1,5 @@
-import { signInWithGooglePopup } from "./firebase";
+import { signOut } from "firebase/auth";
+import { auth, signInWithGooglePopup } from "./firebase";
 
 // Sign in with Google
 export const signin = async () => {
@@ -7,6 +8,10 @@ export const signin = async () => {
     return result;
   } catch (error) {
     throw new error();
-    // console.error("Error signing in with Google:", error);
   }
+};
+
+// user signout function...
+export const handleSignOut = () => {
+  signOut(auth);
 };

@@ -47,7 +47,7 @@ const MoreLinks = () => (
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-8  w-full">
-      <div className="container mx-auto px-4">
+      <div className=" mx-auto px-4">
         <div className="flex flex-wrap justify-between">
           <Address />
           <Contact />

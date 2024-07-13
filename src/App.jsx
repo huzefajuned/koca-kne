@@ -1,31 +1,19 @@
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center  h-full w-full bg-gray-100">
-      <div className="main">
-        <p className="text-2xl underline">
-          yes !! We are building this website for Koca Season 2, <br /> an
-          exciting series of events and activities. Stay tuned for more updates!
-        </p>
-        <p className="text-2xl underline">
-          We are building this website for Koca Season 2, <br /> an exciting
-          series of events and activities. Stay tuned for more updates!
-        </p>
-        <p className="text-2xl underline">
-          We are building this website for Koca Season 2, <br /> an exciting
-          series of events and activities. Stay tuned for more updates!
-        </p>
-        <p className="text-2xl underline">
-          We are building this website for Koca Season 2, <br /> an exciting
-          series of events and activities. Stay tuned for more updates!
-        </p>
-        <p className="text-2xl underline">
-          We are building this website for Koca Season 2, <br /> an exciting
-          series of events and activities. Stay tuned for more updates!
-        </p>
-        <p className="text-2xl underline">
-          We are building this website for Koca Season 2, <br /> an exciting
-          series of events and activities. Stay tuned for more updates!
-        </p>
+    <div className="flex flex-row gap-2 items-center justify-around h-screen w-screen bg-cover bg-center bg-no-repeat bg-hero_background">
+      <div className=" flex flex-col items-center justify-center w-1/2 h-full  ">
+        <h1 className="text-2xl font-bold font-mono ">
+          Welcome To <br />
+          <span className="text-5xl">Kishanganj's Youth Festival</span>
+        </h1>
+      </div>
+      <div className="">
+        <button
+          className=" border-white border-2 p-2
+             rounded-lg hover:text-gray-400"
+        >
+          Join Us
+        </button>
       </div>
     </div>
   );

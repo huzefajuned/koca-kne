@@ -6,16 +6,22 @@ import Loader from "./ui/Loader";
 import Footer from "./Footer";
 import toast from "react-hot-toast";
 import { auth } from "../firebase/firebase";
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
 
-const Layout = ({ children }) => {
-  console.log("children", children);
+const Layout = () => {
   const [loading, setLoading] = useState(true);
+
+  const { user, setUser } = useContext(AuthContext);
+
+  console.log("user inide Layout", user);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
       const unsubscribe = auth.onAuthStateChanged((user) => {
         if (user) {
+          setUser(user?.providerData[0]);
           toast.success(
             `welcome  Back ${user?.displayName} to Koca Season 2 👋 🎉 `
           );
@@ -35,7 +41,7 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
-    <div className="  h-screen w-screen flex flex-col  gap-2">
+    <div className="h-full w-full flex flex-col  gap-2">
       <Navbar />
       <Outlet />
       <Footer />
