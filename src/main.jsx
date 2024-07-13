@@ -1,9 +1,16 @@
-import React, { Children } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import Layout from "./Layout.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./components/Layout";
+import App from "./App";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import "./index.css";
+import Team from "./components/Team";
+import Themes from "./components/Themes";
+import { Toaster } from "react-hot-toast";
+import Events from "./components/Events";
+import Profile from "./components/Profile";
 
 const router = createBrowserRouter([
   {
@@ -14,33 +21,35 @@ const router = createBrowserRouter([
         path: "/",
         element: <App />,
       },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "team",
+        element: <Team />,
+      },
+      {
+        path: "themes",
+        element: <Themes />,
+      },
+      {
+        path: "events",
+        element: <Events />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
 
-      {
-        path: "/about",
-        element: (
-          <>
-            <h1>About !</h1>
-          </>
-        ),
-      },
-      {
-        path: "/contact",
-        element: (
-          <>
-            <h1>Contact !</h1>
-          </>
-        ),
-      },
       {
         path: "*",
-        element: (
-          <>
-            <h1>Erro 404 !</h1>
-          </>
-        ),
+        element: <h1>Error 404 - Page Not Found</h1>,
       },
-
-      // Add more routes here if needed
     ],
   },
 ]);
@@ -48,5 +57,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Toaster position="top-center" />
   </React.StrictMode>
 );
