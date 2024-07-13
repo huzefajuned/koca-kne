@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         hero_background: "url('./assets/bg.jpg')",
+        contact_background: "url('./assets/contact_bg.jpg')",
       },
     },
   },

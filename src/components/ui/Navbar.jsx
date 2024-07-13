@@ -1,11 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { auth } from "../../firebase/firebase";
-import { signOut } from "firebase/auth";
 import { navlinks } from "../../utils";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import user_avatar from "../../assets/user_avatar.png";
-import { handleSignOut, signin } from "../../firebase/firebase.utils";
+import { signin } from "../../firebase/firebase.utils";
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
@@ -23,6 +22,7 @@ const Navbar = () => {
         setUser(null);
         // setLoading(false);
       }
+      setIsMenuOpen(false);
     });
 
     // Clean up the subscription
@@ -53,7 +53,6 @@ const Navbar = () => {
           {user ? (
             <div className="flex items-center space-x-4">
               <Link to="/profile">
-                {/* <span>Profile</sp an> */}
                 <img
                   src={user.photoURL || user_avatar}
                   alt="user photoURL"
@@ -71,50 +70,80 @@ const Navbar = () => {
             </button>
           )}
         </div>
+        {/* Hamburger  */}
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
+            {isMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            )}
           </button>
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden bg-orange-500 text-white flex flex-col  items-center justify-center h-screen ">
           <div className="flex flex-col space-y-4 mt-2">
             {navlinks.map((link) => (
               <Link
                 key={link.id}
                 to={link.path}
                 className=" hover:text-gray-400"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                }}
               >
                 {link.title}
               </Link>
             ))}
             {user ? (
-              <button
-                onClick={handleSignOut}
-                className="text-white hover:text-gray-400"
-              >
-                Logout
-              </button>
+              <div className="flex items-center space-x-4 ">
+                <Link
+                  to="/profile"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <img
+                    src={user.photoURL || user_avatar}
+                    alt="user photoURL"
+                    className="rounded-full  h-16 w-16 border-2"
+                  />
+                </Link>
+              </div>
             ) : (
               <button
                 onClick={() => signin()}
-                className="text-white border-white border-2 hover:text-gray-400"
+                className=" bg-orange-400 text-white border-white border-2  px-5 py-2
+             rounded-lg hover:text-white hover:bg-black"
               >
-                Login
+                Logins
               </button>
             )}
           </div>

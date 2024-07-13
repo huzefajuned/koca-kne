@@ -3,15 +3,21 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
 import Loader from "./ui/Loader";
-import { handleSignOut } from "../firebase/firebase.utils";
 import { AuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
 import user_avatar from "../assets/user_avatar.png";
+import { signOut } from "firebase/auth";
 
 const Profile = () => {
   const { user, setUser } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  // user signout function...
+  const handleSignOut = () => {
+    signOut(auth);
+    navigate("/");
+  };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -32,7 +38,7 @@ const Profile = () => {
   }
 
   return (
-    <div className=" h-full w-full flex justify-center items-center p-5">
+    <div className="h-screen w-full flex justify-center items-center p-5">
       <div className="bg-white shadow-2xl rounded-lg p-6 w-full max-w-md justify-center ">
         <h1 className="text-2xl font-bold text-center mb-4">Profile</h1>
         {user && (

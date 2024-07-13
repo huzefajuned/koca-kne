@@ -12,7 +12,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={haldeSubmit}
-      className="w-full md:w-1/2 max-w-lg space-y-4 bg-white rounded-xl shadow-xl  p-3"
+      className="w-full md:w-1/2 max-w-lg space-y-4  rounded-xl shadow-xl  p-3"
     >
       <div className="flex flex-col mb-4">
         <label className="mb-2 text-base md:text-lg" htmlFor="name">
