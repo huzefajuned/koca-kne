@@ -41,7 +41,7 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className="h-full w-full flex flex-col  gap-2">
+    <div className="h-full w-full flex flex-col ">
       <Navbar />
       <Outlet />
       <Footer />

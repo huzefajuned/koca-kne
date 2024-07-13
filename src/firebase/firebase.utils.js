@@ -7,7 +7,8 @@ export const signin = async () => {
     const result = await signInWithGooglePopup();
     return result;
   } catch (error) {
-    throw new error();
+    console.log("error in signin", error);
+    return error;
   }
 };
 

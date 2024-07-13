@@ -2,7 +2,7 @@ import spinner from "../../assets/spinner.gif";
 
 const Loader = () => {
   return (
-    <div className="absolute flex flex-col items-center justify-center min-h-screen w-full bg-transparent backdrop-blur-sm">
+    <div className=" fixed top-0 flex flex-col items-center justify-center h-screen w-screen bg-transparent backdrop-blur-sm">
       <div
         className="flex flex-row  gap-2 items-center bg-white p-2
        rounded-lg"

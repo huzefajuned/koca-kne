@@ -5,7 +5,7 @@ import { navlinks } from "../../utils";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import user_avatar from "../../assets/user_avatar.png";
-import { signin } from "../../firebase/firebase.utils";
+import { handleSignOut, signin } from "../../firebase/firebase.utils";
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className=" text-black bg-transparent p-4 sticky  top-0">
+    <nav className=" text-black bg-transparent p-4 sticky  top-0 backdrop-blur-sm  border-b-2">
       <div className="container mx-auto flex justify-between items-center">
         <div className=" font-bold text-xl cursor-pointer  flex flex-col items-center justify-center">
           <Link to="/">
@@ -49,7 +49,7 @@ const Navbar = () => {
           ))}
         </div>
         {/* Show hide Login. based on user Authentication */}
-        <div className=" sm:hidden md:block">
+        <div className=" hidden sm:hidden lg:block">
           {user ? (
             <div className="flex items-center space-x-4">
               <Link to="/profile">
@@ -64,10 +64,10 @@ const Navbar = () => {
           ) : (
             <button
               onClick={() => signin()}
-              className=" border-white border-2 p-2
-             rounded-lg hover:text-gray-400"
+              className=" bg-orange-400 text-white border-white border-2  px-5 py-2
+             rounded-lg hover:text-white hover:bg-black"
             >
-              Logins
+              Login
             </button>
           )}
         </div>
@@ -111,7 +111,7 @@ const Navbar = () => {
               </button>
             ) : (
               <button
-                onClick={() => Signin_()}
+                onClick={() => signin()}
                 className="text-white border-white border-2 hover:text-gray-400"
               >
                 Login

@@ -1,6 +1,6 @@
 /* Google fonts */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&display=swap"); /*   CSS for loaders */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap'); url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&display=swap"); /*   CSS for loaders */
 .delay-75 {
   animation-delay: 0.25s;
 }

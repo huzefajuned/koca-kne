@@ -12,6 +12,7 @@ import { Toaster } from "react-hot-toast";
 import Events from "./components/Events";
 import Profile from "./components/Profile";
 import { AuthContextProvider } from "./context/AuthContext";
+import Gallery from "./components/Gallery";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "themes",
         element: <Themes />,
+      },
+      {
+        path: "gallery",
+        element: <Gallery />,
       },
       {
         path: "events",

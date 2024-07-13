@@ -14,16 +14,21 @@ export const navlinks = [
   },
   {
     id: 3,
+    title: "Gallery",
+    path: "/gallery",
+  },
+  {
+    id: 4,
     title: "Team",
     path: "/team",
   },
   {
-    id: 4,
+    id: 5,
     title: "Events",
     path: "/events",
   },
   {
-    id: 5,
+    id: 6,
     title: "Contact",
     path: "/contact",
   },

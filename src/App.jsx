@@ -12,7 +12,7 @@ function App() {
           className=" border-white border-2 p-2
              rounded-lg hover:text-gray-400"
         >
-          Join Us
+          Join as volunteer
         </button>
       </div>
     </div>
