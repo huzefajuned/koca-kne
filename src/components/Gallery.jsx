@@ -11,7 +11,7 @@ const Gallery = () => {
 
   console.log("isopen :", isopen);
   return (
-    <div className=" h-screen flex flex-row flex-wrap gap-6  justify-center  p-8 ">
+    <div className=" h-screen flex flex-row flex-wrap gap-6  justify-center  p-8   overflow-scroll">
       {gallery?.map((_img, i) => (
         <img
           onClick={() => preview(_img.url)}
@@ -19,7 +19,7 @@ const Gallery = () => {
           src={_img.url}
           alt="_img"
           key={i}
-          className="object-cover h-80 w-52 rounded-md shadow-xl  p-0 cursor-pointer hover:border-2 border-white
+          className="object-cover h-80  w-80 sm:w-52   rounded-md shadow-xl   cursor-pointer hover:border-2 border-white
           "
         />
       ))}

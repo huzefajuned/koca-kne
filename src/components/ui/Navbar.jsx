@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className=" font-bold text-xl cursor-pointer  flex flex-col items-center justify-center">
           <Link to="/">
             <img src={logo} alt="logo" className="w-16" />
-            <span className="text-sm underline bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-orange-500">
+            <span className="text-sm hidden md:flex underline bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-orange-500">
               Kishanganj Carnival
             </span>
           </Link>
@@ -108,8 +108,8 @@ const Navbar = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden bg-orange-500 text-white flex flex-col  items-center justify-center h-screen ">
-          <div className="flex flex-col space-y-4 mt-2">
+        <div className="md:hidden  flex flex-col  items-center justify-between ">
+          <div className="flex flex-col space-y-4">
             {navlinks.map((link) => (
               <Link
                 key={link.id}
@@ -143,7 +143,7 @@ const Navbar = () => {
                 className=" bg-orange-400 text-white border-white border-2  px-5 py-2
              rounded-lg hover:text-white hover:bg-black"
               >
-                Logins
+                Login
               </button>
             )}
           </div>
