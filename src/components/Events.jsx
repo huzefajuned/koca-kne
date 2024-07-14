@@ -14,7 +14,7 @@ const Events = () => {
   ];
 
   return (
-    <div className="h-screen w-full flex flex-col justify-center items-center p-6">
+    <div className="h-screen w-full flex flex-col justify-center items-center p-6  ">
       <div className="flex space-x-4 mb-8">
         <button
           onClick={() => setActiveTab("upcoming")}
@@ -43,7 +43,7 @@ const Events = () => {
               {upcomingEvents.map((event) => (
                 <li key={event.id} className="mb-2">
                   <div className="p-4 bg-white shadow-lg rounded-lg">
-                    <h3 className="text-xl font-semibold">{event.name}</h3>
+                    <h3 className="text-xl ">{event.name}</h3>
                     <p className="text-gray-600">{event.date}</p>
                   </div>
                 </li>

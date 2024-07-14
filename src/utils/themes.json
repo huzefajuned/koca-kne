@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Dancing",
+    "description": "Showcase your dancing skills with this theme.",
+    "image": "https://picsum.photos/seed/dancing/400/300"
+  },
+  {
+    "title": "Quiz Competitions",
+    "description": "Participate in exciting quiz competitions.",
+    "image": "https://picsum.photos/seed/quiz/400/300"
+  },
+  {
+    "title": "Singing",
+    "description": "Express your vocal talent through singing.",
+    "image": "https://picsum.photos/seed/singing/400/300"
+  },
+  {
+    "title": "Modeling",
+    "description": "Showcase your modeling talent with this theme.",
+    "image": "https://picsum.photos/seed/modeling/400/300"
+  },
+
+  {
+    "title": "Painting",
+    "description": "Exhibit your creativity with painting.",
+    "image": "https://picsum.photos/seed/painting/400/300"
+  },
+  {
+    "title": "Photography",
+    "description": "Capture the moments with your photography skills.",
+    "image": "https://picsum.photos/seed/photography/400/300"
+  },
+
+  {
+    "title": "Fashion Design",
+    "description": "Showcase your fashion design skills.",
+    "image": "https://picsum.photos/seed/fashion/400/300"
+  }
+]

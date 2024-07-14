@@ -8,6 +8,15 @@ export default {
         contact_background: "url('./assets/contact_bg.jpg')",
       },
     },
+    keyframes: {
+      blink: {
+        "0%, 100%": { opacity: 1 },
+        "50%": { opacity: 0 },
+      },
+    },
+    animation: {
+      blink: "blink 1.4s infinite both",
+    },
   },
   plugins: [],
 };

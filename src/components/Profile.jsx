@@ -31,14 +31,14 @@ const Profile = () => {
     });
 
     return () => unsubscribe();
-  }, [navigate]);
+  }, [navigate, setUser]);
 
   if (loading) {
     return <Loader />;
   }
 
   return (
-    <div className="h-screen w-full flex justify-center items-center p-5">
+    <div className="h-screen w-full flex justify-center items-center p-5 ">
       <div className="bg-white shadow-2xl rounded-lg p-6 w-full max-w-md justify-center ">
         <h1 className="text-2xl font-bold text-center mb-4">Profile</h1>
         {user && (

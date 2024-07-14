@@ -1,0 +1,106 @@
+[
+  {
+    "Organizing Team": [
+      {
+        "profile": "https://randomuser.me/api/portraits/men/1.jpg",
+        "Name": "John Doe"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/2.jpg",
+        "Name": "Jane Smith"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/men/3.jpg",
+        "Name": "Sam Wilson"
+      }
+    ]
+  },
+  {
+    "Photography Team": [
+      {
+        "profile": "https://randomuser.me/api/portraits/men/4.jpg",
+        "Name": "Mike Johnson"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/5.jpg",
+        "Name": "Emily Davis"
+      }
+    ]
+  },
+  {
+    "Promotions Team": [
+      {
+        "profile": "https://randomuser.me/api/portraits/men/6.jpg",
+        "Name": "Chris Lee"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/7.jpg",
+        "Name": "Sarah Brown"
+      }
+    ]
+  },
+  {
+    "Developer Team": [
+      {
+        "profile": "https://randomuser.me/api/portraits/men/8.jpg",
+        "Name": "David Kim"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/9.jpg",
+        "Name": "Sophia Martinez"
+      }
+    ]
+  },
+  {
+    "Volunteer Team": [
+      {
+        "profile": "https://randomuser.me/api/portraits/men/10.jpg",
+        "Name": "James Wilson"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/11.jpg",
+        "Name": "Olivia Garcia"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/men/12.jpg",
+        "Name": "Liam Smith"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/13.jpg",
+        "Name": "Emma Johnson"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/men/14.jpg",
+        "Name": "Noah Williams"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/15.jpg",
+        "Name": "Isabella Brown"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/men/16.jpg",
+        "Name": "Mason Davis"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/17.jpg",
+        "Name": "Sophia Miller"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/men/18.jpg",
+        "Name": "Jacob Wilson"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/19.jpg",
+        "Name": "Mia Martinez"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/men/20.jpg",
+        "Name": "William Anderson"
+      },
+      {
+        "profile": "https://randomuser.me/api/portraits/women/21.jpg",
+        "Name": "Charlotte Thomas"
+      }
+    ]
+  }
+]

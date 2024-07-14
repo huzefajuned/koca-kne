@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { auth } from "../../firebase/firebase";
 import { navlinks } from "../../utils";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import user_avatar from "../../assets/user_avatar.png";
 import { signin } from "../../firebase/firebase.utils";
@@ -10,6 +10,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Navbar = () => {
   const { user, setUser } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   /**
    * authentication state observer and get user data
@@ -30,15 +31,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className=" text-black bg-transparent p-4 sticky  top-0 backdrop-blur-sm  border-b-2">
+    <nav className=" text-black bg-transparent p-4 sticky  top-0 backdrop-blur-sm  border-b-2 z-10">
       <div className="container mx-auto flex justify-between items-center">
-        <div className=" font-bold text-xl cursor-pointer  flex flex-col items-center justify-center">
-          <Link to="/">
-            <img src={logo} alt="logo" className="w-16" />
-            <span className="text-sm hidden md:flex underline bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-orange-500">
-              Kishanganj Carnival
-            </span>
-          </Link>
+        <div
+          onClick={() => navigate("/")}
+          className="font-bold text-xl cursor-pointer  flex flex-col items-center justify-center w-auto"
+        >
+          <img src={logo} alt="logo" className="w-24 md:w-16" />
+          <span className="text-sm hidden md:flex underline bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-cyan-500">
+            Kishanganj Carnival
+          </span>
         </div>
         {/* Navlinks */}
         <div className="hidden md:flex space-x-4">

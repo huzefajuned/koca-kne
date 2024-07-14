@@ -1,3 +1,5 @@
+import { socialLinks } from "../utils";
+
 const Address = () => (
   <div>
     <h2 className="font-bold text-lg mb-2">Address</h2>
@@ -14,10 +16,25 @@ const Contact = () => (
   </div>
 );
 
-const About = () => (
+const SocialLinks = () => (
   <div>
     <h2 className="font-bold text-lg mb-2">About</h2>
     <p>We are a company dedicated to providing the best services.</p>
+    <ul className="mt-4">
+      {socialLinks.map((link, index) => (
+        <li key={index} className="mb-2">
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            {/* <span className="mr-2">{link.icon}</span> */}
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
   </div>
 );
 
@@ -51,7 +68,7 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between">
           <Address />
           <Contact />
-          <About />
+          <SocialLinks />
           <MoreLinks />
         </div>
       </div>
