@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <Home />
-      <About />
       <Themes />
       <Gallery />
       <Team />
+      <About />
       <Events />
     </>
   );
