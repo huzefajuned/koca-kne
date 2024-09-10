@@ -1,10 +1,11 @@
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import EventTimer from "../components/EventTimer";
 const Home = () => {
   return (
-    <div className="flex flex-col  gap-2 md:gap-20 items-center justify-center min-h-[60vh] md:h-screen w-screen bg-cover bg-center bg-no-repeat bg-hero_background p-4">
+    <div className="flex flex-col  md:gap-20 items-center justify-center min-h-[60vh] md:h-screen w-screen bg-cover bg-center bg-no-repeat bg-hero_background p-4">
       <div className="flex flex-col items-center justify-center w-full text-white">
-        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-mono text-left">
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-mono text-left bg-black sm:p-2 p-4 rounded-lg opacity-50">
           Welcome To <br />
           <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             Kishanganj's Youth Festival
@@ -30,6 +31,9 @@ const Home = () => {
           Join as volunteer
         </button>
       </div>
+
+      {/* event timer */}
+      <EventTimer />
     </div>
   );
 };
